@@ -39,8 +39,12 @@ RUN cp /opt/steamcmd/linux64/steamclient.so \
 
 # Docker Environment
 USER steamserver
+WORKDIR /home/steamserver
 
-CMD /opt/citadel/Citadel/Binaries/Linux/CitadelServer-Linux-Shipping -nosteamclient -server -log
+EXPOSE 27015 
+EXPOSE 7777
+
+CMD /opt/citadel/Citadel/Binaries/Linux/CitadelServer-Linux-Shipping -nosteamclient -server -log 
 
 
 

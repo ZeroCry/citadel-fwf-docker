@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  citadel:
+    image: akshmakov/citadel-fwf:latest
+    ports:
+      - "27015:27015"
+      - "7777:7777"
+    volumes:
+      # Copy individual files
+      - "/srv/citadel/configs/Game.ini:/opt/citadel/Citadel/Saved/Config/LinuxServer/Game.ini"
+      # Persist entire save folder
+      - "/srv/citadel/saves:/opt/citadel/Citadel/Saved/SaveGames"
